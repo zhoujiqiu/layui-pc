@@ -1,0 +1,37 @@
+<table class="layui-table">
+    <colgroup>
+        <col width="50">
+        <col width="100">
+    </colgroup>
+    <thead>
+        <tr>
+            <th><input type="checkbox"></th>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>手机号</th>
+            <th>工号</th>
+            <th>状态</th>
+            <th style="text-align: center;">操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{for item in list i}}
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>{{i + 1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.phone}}</td>
+                <td>{{item.jobNumber}}</td>
+                <td>{{item.available ? '可用' : '禁用'}}</td>
+                <td style="text-align: center;">
+                    <a href="#">编辑</a>&nbsp;&nbsp;
+                    {{if item.available}}
+                        <a href="#">禁用</a>
+                    {{else}}
+                        <a href="#">启用</a>
+                    {{/if}}
+                </td>
+            </tr>
+        {{/for}}
+    </tbody>
+</table>

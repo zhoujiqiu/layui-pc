@@ -1,0 +1,86 @@
+html, body, .toon-container, .row{
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+.toon-container, .row{
+    overflow: hidden;
+    width: 100%;
+}
+.row > .left{
+    width: 15%;
+    height: 100%;
+    float: left;
+}
+.row > .left > .container{
+    height: 100%;
+    border-right: 1px solid #dddddd;
+    background:#393D49;
+}
+.row > .right{
+    width: 85%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    float: right;
+}
+.layui-nav{
+    border-radius: inherit;
+}
+.layui-nav-tree{
+    width: 100%;
+}
+#ui-view{
+    margin-bottom: 50px;
+}
+.layui-header{
+    background-color: #393d49;
+    line-height: 65px;
+    color: #fff;
+    height:66px;
+}
+.layui-header img{
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 8px;
+    float: left;
+    border: 0;
+}
+.org-title{
+    float: left;
+    padding: 0 5px;
+    font-size: 20px;
+}
+.nav-con{
+    float: right;
+}
+.user{
+    float: right;
+    margin: 0 10px;
+    cursor: pointer;
+    position: relative;
+}
+.layui-header .user-icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    margin-top: 16px;
+}
+.user-name{
+    line-height: 46px;
+}
+.user dl{
+    max-width: 125px;
+    min-width: 100px;
+    right: -10px;
+    left: inherit;
+}
+.user dd:hover{
+    background-color: #f2f2f2;
+}
+.exit{
+    padding-left: 25px;
+    background: url("../images/exit.png") no-repeat 5px center;
+}

@@ -1,0 +1,12 @@
+<fieldset class="layui-elem-field layui-field-title">
+    <legend>{{title}}</legend>
+</fieldset>
+{{for item in list i}}
+    <blockquote class="layui-elem-quote">
+        {{if i % 2 === 0}}
+            <p style="color: red;">{{item.name}}</p>
+        {{else}}
+            <p>{{item.name}}</p>
+        {{/if}}
+    </blockquote>
+{{/for}}

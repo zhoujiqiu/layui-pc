@@ -1,0 +1,28 @@
+<table class="layui-table">
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>部门</th>
+            <th>岗位</th>
+            <th>工号</th>
+            <th>手机号</th>
+            <th>删除时间</th>
+            <th style="text-align: center;">操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{for item in list i}}
+            <tr>
+                <td>{{item.name}}</td>
+                <td>{{item.dept}}</td>
+                <td>{{item.job}}</td>
+                <td>{{item.jobNumber}}</td>
+                <td>{{item.phone}}</td>
+                <td>{{item.delTime}}</td>
+                <td style="text-align: center;">
+                    <a href="#">还原</a>
+                </td>
+            </tr>
+        {{/for}}
+    </tbody>
+</table>

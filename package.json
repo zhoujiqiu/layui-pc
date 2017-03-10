@@ -1,0 +1,21 @@
+{
+  "name": "toon-server",
+  "version": "1.0.0",
+  "description": "A platform for toon web ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tuffy",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "~3.9.1",
+    "gulp-webserver": "~0.9.1",
+    "gulp-uglify": "~2.1.0",
+    "gulp-cssmin": "~0.1.7",
+    "gulp-rename": "~1.2.2",
+    "gulp-concat": "~2.6.1",
+    "gulp-file-include": "~1.0.0",
+    "line-read": "~1.0.1",
+    "list-files": "~1.1.4"
+  }
+}
