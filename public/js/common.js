@@ -3,27 +3,24 @@
  */
 'use strict';
 
-layui.define(['element','jquery', 'layer'], function(exports){
-  var $ = layui.jquery,
-      layer = layui.layer;
-
-  layer.config({
-    extend: 'skin.css', 
-    skin: 'layer-ext-moon' 
-  });
-
-  $(document).on('mouseenter', '.user', function () {
-    $(this).find('dl').addClass('layui-show');
-  });
-  $(document).on('mouseleave', '.user', function () {
-    $(this).find('dl').removeClass('layui-show');
-  });
-});
-
-/**
- * init tree select
- */
 (function () {
+  /**
+  * listen layui.cache.modules
+  */
+  // element
+  Object.defineProperty(layui.cache.modules, 'element', {
+    get: function () {},
+    set: function (val) {console.log(val);}
+  });
+  // form
+  Object.defineProperty(layui.cache.modules, 'form', {
+    get: function () {},
+    set: function (val) {console.log(val);}
+  });
+
+  /**
+  * init tree select
+  */
   var initTimer = setTimeout(function () {
     var hashStr = location.hash;
     $('ul[lay-filter="toon-tree"]').find('li').removeClass('layui-nav-itemed');
@@ -37,6 +34,22 @@ layui.define(['element','jquery', 'layer'], function(exports){
     clearTimeout(initTimer);
   }, 0);
 })();
+
+layui.define(['element'], function(exports){
+  var layer = layui.layer;
+
+  layer.config({
+    extend: 'skin.css', 
+    skin: 'layer-ext-moon' 
+  });
+
+  $(document).on('mouseenter', '.user', function () {
+    $(this).find('dl').addClass('layui-show');
+  });
+  $(document).on('mouseleave', '.user', function () {
+    $(this).find('dl').removeClass('layui-show');
+  });
+});
 
 /**
  * Get data with async requests

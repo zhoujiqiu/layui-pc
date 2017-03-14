@@ -6,6 +6,7 @@
 /**
  * 数据模板渲染
  */
+
 $f({
   templateUrl: 'public/templates/demo-tmpl.html',
   data: {
