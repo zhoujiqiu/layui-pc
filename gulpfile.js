@@ -6,37 +6,20 @@
 var fs  = require('fs');
 var gulp = require('gulp');
 var webSever = require('gulp-webserver');
-var listFiles = require('list-files');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var angularTemplatecache = require('gulp-angular-templatecache');
+var replace = require('gulp-replace');
 
 // deploy
 gulp.task('deploy', function () {
-  var htmlCacheList = '/**Create by Tuffy*/\n\r\'use strict\';\n\r';
-  listFiles(function (list) {
-    list.map(function (item) {
-      var htmlContent = '$f.$templateCache.put(\'' + item.replace('./', '') + '\', \'';
-      var lines = fileLinesSync(item);
-      lines.map(function (line) {
-        htmlContent += line.replace(/'/gi, '\\\'');
-      });
-      htmlContent += '\');\n\r';
-      htmlCacheList += htmlContent;
-    });
-    // writeFile
-    fs.writeFile('./public/js/toon.tmpl.js', htmlCacheList);
-  }, {
-    dir: 'public/templates',
-    name: 'html'
-  });
-
-  // get file line sync
-  function fileLinesSync(path) {
-    var fileObject = fs.readFileSync(path);
-    var b = new Buffer(fileObject);
-    var list = (b.toString() || '').split('\n');
-    return list;
-  }
+  gulp.src('public/templates/**/*.html')
+    .pipe(angularTemplatecache())
+    .pipe(rename('toon.tmpl.js'))
+    .pipe(replace('angular.module(\'templates\').run([\'$templateCache\', function($templateCache) {', ''))
+    .pipe(replace('}]);', ''))
+    .pipe(replace('$templateCache', '$f.$templateCache'))
+    .pipe(gulp.dest('public/js'));
 });
 
 // start
