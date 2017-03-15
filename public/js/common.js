@@ -35,7 +35,7 @@
   }, 0);
 })();
 
-layui.define(['element'], function(exports){
+layui.define(['element','layer'], function(exports){
   var layer = layui.layer;
 
   layer.config({
