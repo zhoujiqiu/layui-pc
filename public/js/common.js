@@ -5,20 +5,6 @@
 
 (function () {
   /**
-  * listen layui.cache.modules
-  */
-  // element
-  Object.defineProperty(layui.cache.modules, 'element', {
-    get: function () {},
-    set: function (val) {console.log(val);}
-  });
-  // form
-  Object.defineProperty(layui.cache.modules, 'form', {
-    get: function () {},
-    set: function (val) {console.log(val);}
-  });
-
-  /**
   * init tree select
   */
   var initTimer = setTimeout(function () {

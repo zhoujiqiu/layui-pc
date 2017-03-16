@@ -20,12 +20,6 @@ var employeeEvent = {
             callback: function (e, html) {
               if (!e) {
                 document.getElementById('employee-' + (index || 0)).innerHTML = html;
-                layui.use('element', function(){
-                  var element = layui.element();
-                  element.on('tab(employee-nav)', function (elem) {
-                    that.changeTabs($(this).attr('index'));
-                  });
-                });
               }
             }
           });
@@ -35,5 +29,12 @@ var employeeEvent = {
   }
 };
 
-// init
+// init tab
 employeeEvent.changeTabs();
+// inint change tab
+
+var element = layui.element();
+element.init();
+element.on('tab(employee-nav)', function (elem) {
+  employeeEvent.changeTabs($(this).attr('index'));
+});
