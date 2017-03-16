@@ -3,7 +3,16 @@
  */
 'use strict';
 
+var element = null;
+
 (function () {
+  /**
+  * 全局的element对象
+  */
+  layui.use(['element'],function(){
+    element = layui.element();
+  })
+
   /**
   * init tree select
   */

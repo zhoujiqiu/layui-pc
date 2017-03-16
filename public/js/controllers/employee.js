@@ -31,9 +31,8 @@ var employeeEvent = {
 
 // init tab
 employeeEvent.changeTabs();
-// inint change tab
 
-var element = layui.element();
+// inint change tab
 element.init();
 element.on('tab(employee-nav)', function (elem) {
   employeeEvent.changeTabs($(this).attr('index'));
