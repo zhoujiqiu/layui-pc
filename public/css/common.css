@@ -32,7 +32,7 @@ html, body, .toon-container, .row{
     width: 100%;
 }
 #ui-view{
-    margin-bottom: 50px;
+    padding-bottom: 80px;
 }
 .layui-header{
     background-color: #393d49;
